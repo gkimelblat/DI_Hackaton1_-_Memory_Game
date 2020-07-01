@@ -13,10 +13,11 @@ const images = [
     '06_love.jpg',
     '07_chariot.jpg',
     '08_strength.jpg',
-    '09_hermit.jpg',
 ];
-/* The variable cardHTML represents the div class 'memory_card', which refers to 'data-card' as the Data Set of images in the folder 'img'; 
+/* The variable cardHTML creates the div class 'memory_card', which refers to 'data-card' as the Data Set of images in the folder 'img'; 
 the img classes for frontFace and backFace, which allows to control both sides of the cards with the designated images.
+The "forEach loop with the arrow function" loops through the array of images, being the new variable "img" the index of each card
+on the "images" array.
 */
 let cardHTML = '';
 
@@ -29,7 +30,7 @@ images.forEach(img => {
     `
 });
 
-// This command will make each card be rendered twice, so we can have matching cards.
+// This will make each card be rendered twice, so we can have matching cards.
 cardBoard.innerHTML = cardHTML + cardHTML;
 // End of HTML RENDER
 
