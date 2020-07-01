@@ -95,4 +95,4 @@ function resetCards(isMatch = false){
     [firstCard, secondCard, lockCard] = [null, null, false];
 }
 
-cards.forEach(card => card.addEventListener('click', fli pCard));
+cards.forEach(card => card.addEventListener('click', flipCard));
