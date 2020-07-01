@@ -23,7 +23,6 @@ let cardHTML = '';
 let player1 = prompt('Please insert the name of the Player 1')
 let player2 = prompt('Please insert the name of the Player 2')
 
-
 images.forEach(img => {
     cardHTML += `
     <div class='memory_card' data-card='${img}'>
