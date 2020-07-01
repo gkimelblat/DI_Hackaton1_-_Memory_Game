@@ -1,0 +1,49 @@
+* {
+    padding: 0;
+    margin: 80;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    background: #D1C3FF;
+}
+
+#cardboard {
+    width: 75%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;    
+}
+
+.memory_card {
+    width: calc(10% - 5px);
+    height: 45%;
+    margin: 2px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: .5s    
+}
+
+.memory_card:active{
+    transform: scale(.97);
+    transition: .2s;
+}
+
+.memory_card.flip{
+    transform: rotateY(180deg);
+}
+
+.frontFace,
+.backFace{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.frontFace{
+    transform: rotateY(180deg);
+}
