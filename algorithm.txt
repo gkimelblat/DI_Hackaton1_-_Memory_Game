@@ -1,0 +1,11 @@
+Algorithmic Thinking for the Memory Game project:
+
+1. The game board should be at the center of the scree.
+2. Each card have 2 images, one for the face and one for the backface.
+3. Each card must have the two images at the same position, that will flip 180 degrees on the Y axis when clicked.
+4. While the mouse button is being pressed, the card should have an animation of a slight shrink to give some life to the user action.
+5. After two cards are flipped, a function should check if the cards are a match or not.
+6. If they match, they have to remain open and the current player should score a point and keep his turn.
+7. If they don't match, they should reset and the next player should start his turn.
+8. When all the game is over, a pop-up message should congratulate the winner, 
+and after pressing Ok, the game should be entirely reset, going back to prompting the name of the players.

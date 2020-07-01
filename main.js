@@ -20,6 +20,9 @@ The "forEach loop with the arrow function" loops through the array of images, be
 on the "images" array.
 */
 let cardHTML = '';
+let player1 = prompt('Please insert the name of the Player 1')
+let player2 = prompt('Please insert the name of the Player 2')
+
 
 images.forEach(img => {
     cardHTML += `
@@ -29,7 +32,6 @@ images.forEach(img => {
     </div>
     `
 });
-
 // This will make each card be rendered twice, so we can have matching cards.
 cardBoard.innerHTML = cardHTML + cardHTML;
 // End of HTML RENDER
@@ -48,7 +50,6 @@ If they are not a match, the function 'disableCards' wil let them open for a 100
 const cards = document.querySelectorAll('.memory_card');
 let firstCard, secondCard;
 let lockCard = false;
-
 
 function flipCard(){
     if (lockCard) return false;
