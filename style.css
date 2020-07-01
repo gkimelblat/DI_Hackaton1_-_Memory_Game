@@ -51,7 +51,7 @@ body {
     width: 100%;
     height: 100%;
     position: absolute;
-    -webkit-backface-visibility: hidden; /* For safari */
+    -webkit-backface-visibility: hidden; /* Safari may still need the webkit */
     backface-visibility: hidden;
 }
 
