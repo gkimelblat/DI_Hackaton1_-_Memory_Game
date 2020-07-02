@@ -12,20 +12,43 @@ body {
     align-items: center;  
 }
 
-#cardboard {
-    width: 95vh;
-    display: flex;
-    flex-wrap: wrap;    
+#row:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 #p1 {
+    width: 15%;
     display: flex;
     flex-wrap: wrap;
+    float: left;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: xx-large;
+    color: blueviolet;
+}
+
+#cardboard {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    float: left;  
+    justify-content: center;
+    align-items: center;  
 }
 
 #p2 {
+    width: 15%;
     display: flex;
     flex-wrap: wrap;
+    float: left;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: xx-large;
+    color: blueviolet;
 }
 
 .memory_card {

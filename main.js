@@ -20,8 +20,13 @@ The "forEach loop with the arrow function" loops through the array of images, be
 on the "images" array.
 */
 let cardHTML = '';
-let player1 = prompt('Please insert the name of the Player 1')
-let player2 = prompt('Please insert the name of the Player 2')
+
+let player1 = prompt('Please insert the name of the Player 1');
+let player2 = prompt('Please insert the name of the Player 2');
+let p1Score = 0
+let p2Score = 0
+document.getElementById('p1').innerHTML = player1 + " " + p1Score.toString()
+document.getElementById('p2').innerHTML = player2 + " " + p2Score.toString()
 
 images.forEach(img => {
     cardHTML += `
@@ -34,7 +39,6 @@ images.forEach(img => {
 // This will make each card be rendered twice, so we can have matching cards.
 cardBoard.innerHTML = cardHTML + cardHTML;
 // End of HTML RENDER
-
 
 /* The constant 'cards' have a 'querySelectorAll' for the div class 'memory_card' that returns a static NodeList 
 of the elements of the div class specified, so we can have our matching cards. 
@@ -63,6 +67,19 @@ function flipCard(){
     secondCard = this;
 
     checkForMatch();
+    playerTurn();
+}
+
+function playerTurn(){
+    let p1Turn = document.getElementById('p1').style.color = 'blue';
+    let p2Turn = document.getElementById('p2').style.color = 'blue';
+    if (disableCards() == true) {
+        p1Turn = true
+        p2Turn = false
+    } else if (disableCards() == false) {
+        p1Turn = false
+        p2Turn = true
+    }
 }
 
 function checkForMatch(){
@@ -75,7 +92,6 @@ function disableCards(){
     setTimeout(() => {
     firstCard.classList.remove('flip');
     secondCard.classList.remove('flip');
-
     resetCards();
     }, 1000);
 }
