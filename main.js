@@ -123,7 +123,7 @@ function resetCards(isMatch = false){
             p1Display = document.getElementById('p1').innerHTML = player1 + ' ' + p1Score;
         } else {
             p2Score = parseInt(p2Score + 1);
-            p2Display = document.getElementById('p2').innerHTML = player1 + ' ' + p2Score;
+            p2Display = document.getElementById('p2').innerHTML = player2 + ' ' + p2Score;
         }
     }
 }
