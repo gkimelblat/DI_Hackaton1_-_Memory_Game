@@ -67,25 +67,16 @@ function flipCard(){
     secondCard = this;
 
     checkForMatch();
-    playerTurn();
 }
 
-function playerTurn(){
-    let p1Turn = document.getElementById('p1').style.color = 'blue';
-    let p2Turn = document.getElementById('p2').style.color = 'blue';
-    if (disableCards() == true) {
-        p1Turn = true
-        p2Turn = false
-    } else if (disableCards() == false) {
-        p1Turn = false
-        p2Turn = true
-    }
-}
 
 function checkForMatch(){
     let isMatch = firstCard.dataset.card === secondCard.dataset.card;
 
-    !isMatch ? disableCards() : resetCards(isMatch)}
+    !isMatch ? disableCards() : resetCards(isMatch);
+}
+
+document.getElementById("p1").style.color = 'blue'
 
 function disableCards(){
     lockCard = true;
