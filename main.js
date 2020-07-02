@@ -25,8 +25,8 @@ let player1 = prompt('Please insert the name of the Player 1');
 let player2 = prompt('Please insert the name of the Player 2');
 let p1Score = 0
 let p2Score = 0
-document.getElementById('p1').innerHTML = player1 + " " + p1Score.toString()
-document.getElementById('p2').innerHTML = player2 + " " + p2Score.toString()
+let p1Display = document.getElementById('p1').innerHTML = player1 + ' ' + p1Score
+let p2Display = document.getElementById('p2').innerHTML = player2 + ' ' + p2Score
 
 images.forEach(img => {
     cardHTML += `
@@ -53,6 +53,8 @@ If they are not a match, the function 'disableCards' wil let them open for a 100
 const cards = document.querySelectorAll('.memory_card');
 let firstCard, secondCard;
 let lockCard = false;
+let p1Color = document.getElementById("p1").style.color = 'blue'
+let p2Color = document.getElementById("p2").style.color = 'blueviolet'
 
 function flipCard(){
     if (lockCard) return false;
@@ -76,7 +78,9 @@ function checkForMatch(){
     !isMatch ? disableCards() : resetCards(isMatch);
 }
 
-document.getElementById("p1").style.color = 'blue'
+function playerScore() {
+} 
+
 
 function disableCards(){
     lockCard = true;
@@ -89,7 +93,7 @@ function disableCards(){
 
 (function shuffle(){
     cards.forEach(card => {
-        let rand = Math.floor(Math.random() * 20);
+        let rand = Math.floor(Math.random() * images.length);
         card.style.order = rand;
     });
 })();
@@ -98,8 +102,30 @@ function resetCards(isMatch = false){
     if(isMatch){
         firstCard.removeEventListener('click', flipCard);
         secondCard.removeEventListener('click', flipCard);
+        playerScore();
+    } else {
+        playerSwitch();
     }
     [firstCard, secondCard, lockCard] = [null, null, false];
+
+    function playerSwitch() {
+        if(p1Color == 'blue') {
+            p1Color = document.getElementById('p1').style.color = 'blueviolet';
+            p2Color = document.getElementById('p2').style.color = 'blue';
+        } else {
+            p1Color = document.getElementById('p1').style.color = 'blue';
+            p2Color = document.getElementById('p2').style.color = 'blueviolet';
+        }
+    }
+    function playerScore() {
+        if(p1Color == 'blue') {
+            p1Score = parseInt(p1Score + 1);
+            p1Display = document.getElementById('p1').innerHTML = player1 + ' ' + p1Score;
+        } else {
+            p2Score = parseInt(p2Score + 1);
+            p2Display = document.getElementById('p2').innerHTML = player1 + ' ' + p2Score;
+        }
+    }
 }
 
 cards.forEach(card => card.addEventListener('click', flipCard));
