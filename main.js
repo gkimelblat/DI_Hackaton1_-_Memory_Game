@@ -48,13 +48,18 @@ and when the user opens the second card, the fuction 'checkForMatch' will check 
 The function 'flipCard' switches the div class to make our cards flip sides.
 If the cards are correct, both will stay open, and the fucntion 'resetCards' will remove them from the list of the clickable cards.
 If they are not a match, the function 'disableCards' wil let them open for a 1000ms (1 second) and then close both.
+The function 'playerSwitch' will check who's turn is based on the name color (Blue is who's playing). 
+If the cards match, the player keeps it's turn, otherwise, the colors of names are switched, switching the turns.
+The funcion 'playerScore' also check's the color of the player's name to give point's if the player gets matching cards.
+Both 'playerSwitch' and 'playerScore' are nested in the function 'resetCards', as 'resetCards' will check if the cards are a Match or not.
+thus also checking if the player gets a point through 'playerScore' or if the turns switch through 'playerSwitch'.
  */
 
 const cards = document.querySelectorAll('.memory_card');
 let firstCard, secondCard;
 let lockCard = false;
-let p1Color = document.getElementById("p1").style.color = 'blue'
-let p2Color = document.getElementById("p2").style.color = 'blueviolet'
+let p1Color = document.getElementById('p1').style.color = 'blue'
+let p2Color = document.getElementById('p2').style.color = 'blueviolet'
 
 function flipCard(){
     if (lockCard) return false;
