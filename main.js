@@ -108,6 +108,7 @@ function resetCards(isMatch = false){
         firstCard.removeEventListener('click', flipCard);
         secondCard.removeEventListener('click', flipCard);
         playerScore();
+        gameOver();
     } else {
         playerSwitch();
     }
@@ -122,6 +123,7 @@ function resetCards(isMatch = false){
             p2Color = document.getElementById('p2').style.color = 'blueviolet';
         }
     }
+
     function playerScore() {
         if(p1Color == 'blue') {
             p1Score = parseInt(p1Score + 1);
@@ -131,6 +133,20 @@ function resetCards(isMatch = false){
             p2Display = document.getElementById('p2').innerHTML = player2 + ' ' + p2Score;
         }
     }
+
+    function gameOver() {
+        if (parseInt(p1Score + p2Score) == 9) {
+            if(p1Color == 'blue') {
+                alert(`Congratulations! ${player1} wins!`);
+                location.reload();
+            } else {
+                alert(`Congratulations! ${player2} wins!`);
+                location.reload();
+            }
+        }
+    }
 }
+
+
 
 cards.forEach(card => card.addEventListener('click', flipCard));
